@@ -10,7 +10,7 @@ If there is an issue, the command will send back said issue. Otherwise, nothing 
 
 To create the virtual environment:
 ```bash
-python3 -m venv matrix_env 
+python3 -m venv matrix_env
 ```
 
 To enter the virtual environment:
@@ -26,7 +26,44 @@ python3 <name of the program>
 To exit a virtual environment, use the command `deactivate` in the terminal.
 
 # Notions
+## Pip
+To install the dependencies present in requirements.txt, use this:
+```bash
+pip install -r requirements.txt
+```
 
+## Poetry
+To install poetry, use this command:
+```bash
+curl -sSL https://install.python-poetry.org | python3 -
+```
+To create a pyproject.toml:
+```bash
+poetry init
+```
+Then to install dependencies inside pyproject.toml:
+```bash
+poetry install
+```
+The command to run any program with poetry:
+```bash
+poetry run python3 *.py
+```
+
+## .env
+First, install dotenv dependency:
+```bash
+pip install python-dotenv
+```
+
+Use the .env.example in the folder to create the .env (you can copy it using `cp`) and put your own values inside to protect your confidential data.
+```bash
+cp .env.example .env
+```
+Use this to test the priority between the .env file and the console output to overrides some values like this:
+```bash
+MATRIX_MODE=production API_KEY=secret123 python3 oracle.py
+```
 
 # Resources
 
